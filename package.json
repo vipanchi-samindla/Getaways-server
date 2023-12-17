@@ -6,7 +6,10 @@
         "dev": "nodemon src/index.ts",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build-ts": "tsc",
-        "build": "npm run build-ts"
+        "build": "npm run build-ts",
+        "prepare": "husky install",
+        "format-fix": "pretty-quick --staged",
+        "lint-fix": "eslint --fix"
     },
     "author": "Yogesh Vipanchi",
     "license": "ISC",
@@ -15,25 +18,13 @@
         "express": "^4.18.2"
     },
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.14.0",
-        "@typescript-eslint/parser": "^6.14.0",
-        "eslint": "^8.56.0",
-        "husky": "^8.0.3",
-        "lint-staged": "^15.2.0",
+        "@typescript-eslint/eslint-plugin": "4.14.2",
+        "@typescript-eslint/parser": "4.14.2",
+        "eslint": "7.19.0",
+        "eslint-plugin-prettier": "3.4.1",
+        "husky": "^8.0.0",
         "nodemon": "^3.0.2",
-        "prettier": "^3.1.1",
-        "pretty-quick": "^3.1.3"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "*.{ts,tsx}": [
-            "pretty-quick --staged",
-            "eslint --fix",
-            "git add"
-        ]
+        "prettier": "^2.8.8",
+        "pretty-quick": "^2.0.2"
     }
 }
